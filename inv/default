@@ -1,5 +1,9 @@
 [base:children]
 vms
+proxmox
+
+[proxmox]
+transtec.lan.geco.ethz.ch ansible_host=10.10.0.107
 
 [vms]
 monitoring.lan.geco.ethz.ch ansible_host=10.10.0.61
@@ -11,7 +15,9 @@ minecraft.lan.geco.ethz.ch ansible_host=10.10.0.51
 
 [vms:vars]
 ansible_ssh_user=root
-ansible_sudo_pass=geco123
+
+[proxmox:vars]
+ansible_ssh_user=root
 
 [ca]
 geco-cx.vseth.ethz.ch ansible_ssh_user=geco
