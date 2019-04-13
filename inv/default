@@ -27,3 +27,8 @@ ansible_ssh_user=root
 
 [ca]
 geco-cx.vseth.ethz.ch ansible_ssh_user=geco
+
+[dhcp]
+dhcp0.lan.geco.ethz.ch
+dhcp1.lan.geco.ethz.ch
+

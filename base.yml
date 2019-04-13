@@ -25,3 +25,11 @@
         tags: tmux
       - name: zsh
         tags: zsh
+
+  # Setup DHCP server with failover
+  - hosts: dhcp
+    gather_facts: True
+    roles:
+      - name: dhcp
+        tags: dhcp
+
