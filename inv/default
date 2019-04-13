@@ -3,11 +3,11 @@ vms
 proxmox
 
 [proxmox]
-transtec.lan.geco.ethz.ch ansible_host=10.10.0.107
+transtec.lan.geco.ethz.ch
 
 [vms]
 monitoring.lan.geco.ethz.ch
-#dhcp1.lan.geco.ethz.ch ansible_host=10.10.0.240
+dhcp0.lan.geco.ethz.ch
 dhcp1.lan.geco.ethz.ch
 dnscache.lan.geco.ethz.ch
 files.lan.geco.ethz.ch
