@@ -4,13 +4,13 @@ proxmox
 
 [proxmox]
 transtec.lan.geco.ethz.ch
-hydra.lan.geco.ethz.ch ansible_host=10.10.0.100
+hydra.lan.geco.ethz.ch# ansible_host=10.10.0.100
 
 [vms]
 monitoring.lan.geco.ethz.ch
 dhcp0.lan.geco.ethz.ch
 dhcp1.lan.geco.ethz.ch
-dnscache.lan.geco.ethz.ch
+cachedns.lan.geco.ethz.ch
 files.lan.geco.ethz.ch
 minecraft.lan.geco.ethz.ch
 adminafk.lan.geco.ethz.ch
