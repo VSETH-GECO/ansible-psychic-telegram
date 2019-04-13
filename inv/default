@@ -4,7 +4,13 @@ proxmox
 
 [proxmox]
 transtec.lan.geco.ethz.ch
-hydra.lan.geco.ethz.ch# ansible_host=10.10.0.100
+hydra.lan.geco.ethz.ch
+hex6.lan.geco.ethz.ch
+hex5.lan.geco.ethz.ch
+hex4.lan.geco.ethz.ch
+hex3.lan.geco.ethz.ch
+hex2.lan.geco.ethz.ch
+hex1.lan.geco.ethz.ch
 
 [vms]
 monitoring.lan.geco.ethz.ch
@@ -18,6 +24,11 @@ ebot.lan.geco.ethz.ch
 login.lan.geco.ethz.ch
 ts.lan.geco.ethz.ch
 steamcache.lan.geco.ethz.ch
+csfun1.lan.geco.ethz.ch
+csmatch4.lan.geco.ethz.ch
+csmatch3.lan.geco.ethz.ch
+csmatch2.lan.geco.ethz.ch
+csmatch1.lan.geco.ethz.ch
 
 [vms:vars]
 ansible_ssh_user=root
