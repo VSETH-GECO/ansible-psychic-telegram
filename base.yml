@@ -1,0 +1,27 @@
+---
+  # Slap base SOS-ETH-style debian config onto all hosts
+  - hosts: base
+    gather_facts: True
+    roles:
+      - name: apt
+        tags: apt
+      - name: regional
+        tags: regional
+      - name: time
+        tags: time
+        #      - name: apt-dater-host
+        #        tags: apt
+      - name: motd
+        tags: motd
+      - name: network
+        tags: network
+      - name: programs
+        tags: programs
+      - name: sh
+        tags: sh
+      - name: ssh
+        tags: ssh
+      - name: tmux
+        tags: tmux
+      - name: zsh
+        tags: zsh

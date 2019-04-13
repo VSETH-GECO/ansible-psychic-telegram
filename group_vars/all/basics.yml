@@ -1,0 +1,21 @@
+motd_infrastructure_manager: "GECO IT <root@geco.ethz.ch>"
+
+motd_greeting_text: |
+  Usage of this system is subject to prior approval. For machines
+   located at ETH Zurich, you are also subject to the separate
+   Benutzungsordnung fuer Telematik an der ETH Zurich (BOT)
+     https://www1.ethz.ch/id/documentation/rechtliches
+
+# The environment variables specified by the XDG Base Directory Specification (use this variable as the environment for the shell module when used for user-specific commands)
+xdg_env:
+  XDG_DATA_HOME: '${HOME}/.local/share'
+  XDG_CONFIG_HOME: '${HOME}/.config'
+  XDG_DATA_DIRS: '/usr/local/share/:/usr/share/'
+  XDG_CONFIG_DIRS: '/etc/xdg'
+  XDG_CACHE_HOME: '${HOME}/.cache'
+
+config_repo_path: "cfg"
+
+lca_is_local: False
+lca_hostname: gitea.njsm.de
+lca_basepath: /home/geco/.cas

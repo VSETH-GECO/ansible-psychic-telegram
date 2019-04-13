@@ -1,0 +1,6 @@
+apt_add_custom_repo: True
+#apt_custom_repo_url: "deb http://apt.sos.ethz.ch/{{ ansible_distribution_release }}/ {{ ansible_distribution_release }} main"
+apt_custom_repo_url: "deb http://apt.sos.ethz.ch/stretch/ stretch main"
+apt_custom_repo_key: "{{ lookup('file', 'keys/sos-archive-key.asc') }}"
+
+apt_unattended_upgrades: True

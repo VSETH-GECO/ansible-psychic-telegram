@@ -1,0 +1,9 @@
+# SSH restrictions
+sshd_allowed_users:
+  - geco
+  - root
+
+ssh_strict_client: True
+sshd_use_dns: "no"
+sshd_restrict_users: False
+sshd_replace_moduli: True

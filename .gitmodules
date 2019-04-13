@@ -1,0 +1,45 @@
+[submodule "roles/monitoring-base"]
+	path = roles/monitoring-base
+	url = https://github.com/SOSETH/monitoring-base.git
+[submodule "roles/monitoring-server"]
+	path = roles/monitoring-server
+	url = https://github.com/SOSETH/monitoring-server.git
+[submodule "roles/local-ca"]
+	path = roles/local-ca
+	url = https://github.com/SOSETH/local-ca.git
+[submodule "roles/tmux"]
+	path = roles/tmux
+	url = https://github.com/SOSETH/tmux.git
+[submodule "roles/network"]
+	path = roles/network
+	url = https://github.com/SOSETH/network.git
+[submodule "roles/apt"]
+	path = roles/apt
+	url = https://github.com/SOSETH/apt.git
+[submodule "roles/sh"]
+	path = roles/sh
+	url = https://github.com/SOSETH/sh.git
+[submodule "roles/time"]
+	path = roles/time
+	url = https://github.com/SOSETH/time.git
+[submodule "roles/monitoring-client"]
+	path = roles/monitoring-client
+	url = https://github.com/SOSETH/monitoring-client.git
+[submodule "roles/haproxy"]
+	path = roles/haproxy
+	url = https://github.com/SOSETH/haproxy.git
+[submodule "roles/motd"]
+	path = roles/motd
+	url = https://github.com/SOSETH/motd.git
+[submodule "roles/regional"]
+	path = roles/regional
+	url = https://github.com/SOSETH/regional.git
+[submodule "roles/programs"]
+	path = roles/programs
+	url = gitea@gitea.njsm.de:ansible/programs.git
+[submodule "roles/zsh"]
+	path = roles/zsh
+	url = gitea@gitea.njsm.de:ansible/zsh.git
+[submodule "roles/ssh"]
+	path = roles/ssh
+	url = gitea@gitea.njsm.de:ansible/ssh.git
