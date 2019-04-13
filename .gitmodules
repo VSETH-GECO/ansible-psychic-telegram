@@ -34,3 +34,6 @@
 [submodule "roles/regional"]
 	path = roles/regional
 	url = https://github.com/SOSETH/regional.git
+[submodule "roles/dhcp"]
+	path = roles/dhcp
+	url = git@github.com:VSETH-GECO/dhcp.git
