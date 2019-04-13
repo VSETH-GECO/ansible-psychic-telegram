@@ -3,6 +3,9 @@ vms
 
 [vms]
 monitoring.lan.geco.ethz.ch ansible_host=10.10.0.61
+#dhcp1.lan.geco.ethz.ch ansible_host=10.10.0.240
+dhcp1.lan.geco.ethz.ch ansible_host=10.10.0.241
+dnscache.lan.geco.ethz.ch ansible_host=10.10.0.200
 
 [vms:vars]
 ansible_ssh_user=root
