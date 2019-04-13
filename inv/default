@@ -6,14 +6,14 @@ proxmox
 transtec.lan.geco.ethz.ch ansible_host=10.10.0.107
 
 [vms]
-monitoring.lan.geco.ethz.ch ansible_host=10.10.0.61
+monitoring.lan.geco.ethz.ch
 #dhcp1.lan.geco.ethz.ch ansible_host=10.10.0.240
-dhcp1.lan.geco.ethz.ch ansible_host=10.10.0.241
-dnscache.lan.geco.ethz.ch ansible_host=10.10.0.200
-files.lan.geco.ethz.ch ansible_host=10.10.0.71
-minecraft.lan.geco.ethz.ch ansible_host=10.10.0.51
-adminafk.lan.geco.ethz.ch ansible_host=10.10.0.32
-ebot.lan.geco.ethz.ch ansible_host=10.10.0.31
+dhcp1.lan.geco.ethz.ch
+dnscache.lan.geco.ethz.ch
+files.lan.geco.ethz.ch
+minecraft.lan.geco.ethz.ch
+adminafk.lan.geco.ethz.ch
+ebot.lan.geco.ethz.ch
 
 [vms:vars]
 ansible_ssh_user=root
