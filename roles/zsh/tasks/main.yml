@@ -1,0 +1,44 @@
+---
+  - name: Install zsh
+    become: True
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - zsh
+
+  - name: Create theme directory
+    become: True
+    file: path=/etc/zsh/powerlevel9k state=directory owner=root group=root
+    
+  - name: Upload theme
+    become: True
+    unarchive: src=p9k.tar dest=/etc/zsh/powerlevel9k mode=0755 owner=root group=root
+    
+  - name: Create load script
+    become: True
+    template: src=sos.zsh dest=/etc/zsh/sos.zsh mode=0755 owner=root group=root
+    
+  - name: Create default zshrc for new users
+    become: True
+    template: src=zshrc.j2 dest=/etc/skel/.zshrc mode=0755 owner=root group=root
+    
+  - name: Check if root has a zshrc
+    become: True
+    stat: path=/root/.zshrc
+    register: rzsh
+    
+  - name: Deploy zshrc for root
+    become: True
+    template: src=zshrc.j2 dest=/root/.zshrc mode=0755 owner=root group=root
+    when: not rzsh.stat.exists
+
+  - name: Check if sudo is installed
+    stat: path=/etc/sudoers.d
+    register: sudo
+    changed_when: False
+
+  - name: Configure sudo to keep the DEFAULT_USER variable
+    become: True
+    template: src=envkeep.j2 dest=/etc/sudoers.d/keep-zsh-vars mode=0440 owner=root group=root
+    when: sudo.stat.exists

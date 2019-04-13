@@ -1,0 +1,88 @@
+---
+  # Load distribution-specific config
+  - include_vars: "{{ ansible_distribution }}.yml"
+
+  - name: Install ssh packages
+    become: True
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ pkgs }}"
+
+  - name: Load OpenSSH version
+    shell: "ssh -V 2>&1 | sed -E 's/([a-zA-Z_]+)([0-9.]+)(.*)/\\2/g'"
+    register: sshv
+    changed_when: False
+
+  - name: Copy host configuration
+    become: True
+    template:
+      src: etc_ssh_sshd__config.j2
+      dest: /etc/ssh/sshd_config
+      validate: 'sshd -T -f %s'
+      owner: root
+      group: root
+      mode: 0644
+    notify: restart ssh
+    register: result
+
+  - name: Copy client configuration
+    become: True
+    template:
+      src: etc_ssh_ssh__config.j2
+      dest: /etc/ssh/ssh_config
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Add authorized keys
+    become: True
+    authorized_key:
+      user: "root"
+      key: "{{ lookup('file', ssh_user_key_loc + '/' + item + '.pub') }}"
+    with_items: "{{ ssh_authorized_keys }}"
+    when: ssh_deploy_root_authorized_keys
+
+  - name: Deploy .k5login for root
+    become: True
+    when: sshd_principals_for_root != []
+    template:
+      src: k5login.j2
+      dest: /root/.k5login
+      owner: root
+      group: root
+      mode: 0640
+
+  - name: Create SSH signon restriction group
+    when: sshd_restrict_users and sshd_manage_restriction_group
+    become: True
+    group:
+      name: "{{ sshd_restriction_group }}"
+      system: yes
+
+  - name: Add users to SSH signon restriction group
+    when: sshd_restrict_users and sshd_manage_restriction_group
+    become: True
+    user:
+      name: "{{ item }}"
+      groups: "{{ sshd_restriction_group }}"
+      append: yes
+    with_items: "{{ sshd_allowed_users }}"
+
+  - name: Configure additional users
+    when: sshd_additional_user_cfg != []
+    include_tasks: userconfig.yml
+    with_items: "{{ sshd_additional_user_cfg }}"
+
+  - name: Replace moduli
+    when: sshd_replace_moduli
+    become: True
+    copy:
+      dest: "/etc/ssh/moduli"
+      owner: root
+      group: root
+      mode: 0644
+      content: "{{ lookup('file', sshd_moduli_name) }}"
+    notify: restart ssh
+
+  - meta: flush_handlers
