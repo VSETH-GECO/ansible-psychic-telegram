@@ -34,12 +34,3 @@
 [submodule "roles/regional"]
 	path = roles/regional
 	url = https://github.com/SOSETH/regional.git
-[submodule "roles/programs"]
-	path = roles/programs
-	url = gitea@gitea.njsm.de:ansible/programs.git
-[submodule "roles/zsh"]
-	path = roles/zsh
-	url = gitea@gitea.njsm.de:ansible/zsh.git
-[submodule "roles/ssh"]
-	path = roles/ssh
-	url = gitea@gitea.njsm.de:ansible/ssh.git
