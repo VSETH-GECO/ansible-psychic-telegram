@@ -14,6 +14,7 @@ files.lan.geco.ethz.ch
 minecraft.lan.geco.ethz.ch
 adminafk.lan.geco.ethz.ch
 ebot.lan.geco.ethz.ch
+login.lan.geco.ethz.ch ansible_host=10.10.0.20
 
 [vms:vars]
 ansible_ssh_user=root
