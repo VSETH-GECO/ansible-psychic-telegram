@@ -149,6 +149,8 @@ RekeyLimit default 6h
 Subsystem sftp /usr/lib/openssh/sftp-server
 {% elif ansible_distribution == "Fedora" %}
 Subsystem sftp /usr/libexec/openssh/sftp-server
+{% elif ansible_distribution == "Ubuntu" %}
+Subsystem sftp /usr/lib/openssh/sftp-server
 {% endif %}
 
 AcceptEnv {{ sshd_acceptable_environment_variables|join(' ') }}
