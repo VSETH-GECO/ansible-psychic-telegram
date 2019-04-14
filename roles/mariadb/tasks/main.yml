@@ -1,0 +1,89 @@
+---
+  - name: Install mariadb
+    become: True
+    apt:
+      name:
+        - mariadb-server
+        - mariadb-client
+        - mariadb-common
+        - python-mysqldb
+      state: present
+      update_cache: yes
+      cache_valid_time: 1800
+  # For co-existance with mariadb-ha, use the systemd generator
+  - name: Load service status
+    become: True
+    service_facts:
+
+  - name: Check whether 'old' service is running
+    set_fact:
+      oldsvc: True
+    when: ('mysql.service' in services and services['mysql.service'].state == 'running') or ('mariadb.service' in services and services['mariadb.service'].state == 'running')
+
+  - name: Disable and stop old services
+    when: oldsvc|default(False)
+    become: True
+    service:
+      name: "{{ item }}"
+      state: stopped
+      enabled: no
+    with_items:
+      - mysql.service
+      - mariadb.service
+    failed_when: False
+
+  - name: Ensure that the service is started
+    become: True
+    service:
+      name: 'mariadb@sql.service'
+      state: started
+      enabled: yes
+
+  - name: Create MariaDB ansible config dropin
+    become: True
+    template:
+      src: ansible.cnf.j2
+      dest: /etc/mysql/conf.d/mysql.cnf
+      owner: root
+      group: root
+      mode: 0644
+    notify: restart mariadb
+
+  - meta: flush_handlers
+
+  - name: Remove all anonymous accounts
+    become: True
+    mysql_user:
+      name: ''
+      host_all: yes
+      state: absent
+
+  - name: Set MariaDB root password
+    become: True
+    mysql_user:
+      name: root
+      password: "{{ mariadb_root_password }}"
+      host_all: yes
+
+  - name: Update MariaDB client configuration
+    become: True
+    template:
+      src: my.cnf.user.j2
+      dest: /root/.my.cnf
+      owner: root
+      group: root
+      mode: 0640
+
+  - name: Create databases
+    become: True
+    with_items: "{{ mariadb_databases }}"
+    mysql_db:
+      name: "{{ item.name }}"
+
+  - name: Create users
+    become: True
+    with_items: "{{ mariadb_databases }}"
+    mysql_user:
+      name: "{{ item.user }}"
+      password: "{{ item.password }}"
+      priv: "{{ item.name }}.*:ALL"

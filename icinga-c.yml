@@ -1,0 +1,76 @@
+---
+  # Playbook for monitoring "clients"
+  - hosts: mon-client
+    roles:
+      - { role: haproxy, tags: haproxy }
+
+  # Ensure cert traget directory exists
+  - hosts: mon-client
+    tasks:
+      - name: Install icinga
+        become: True
+        apt: name=icinga2 state=latest
+      - name: Remove old certificate directory
+        become: True
+        file:
+          path: /etc/icinga2/pki
+          state: absent
+        register: pch
+      - name: Restart icinga
+        become: True
+        when: pch.changed
+        service: name=icinga2 state=restarted
+      - name: Create new certificate directory
+        become: True
+        file:
+          path: /var/lib/icinga2/certs
+          state: directory
+          owner: nagios
+          group: nagios
+          mode: 0750
+
+  # We might need serve facts...
+  - hosts: mon-server
+    gather_facts: True
+    tags: icconf, icinga
+
+  # Generate certificates
+  - hosts: mon-client
+    roles:
+      - role: local-ca
+        local_ca_caname: icinga
+        local_ca_group: nagios
+        local_ca_both:
+          pem:
+            cert: "/var/lib/icinga2/certs/{{ ansible_fqdn }}.crt"
+            key: "/var/lib/icinga2/certs/{{ ansible_fqdn }}.key"
+          cn: "{{ ansible_fqdn }}"
+        local_ca_ca:
+          cert: "/var/lib/icinga2/certs/ca.crt"
+          #      - role: local-ca
+          #        local_ca_caname: logstash
+          #        local_ca_client:
+          #          pem:
+          #            cert: "/etc/haproxy/ls-cl.crt"
+          #            key: "/etc/haproxy/ls-cl.key"
+          #          cn: "{{ ansible_nodename }}-client"
+          #        local_ca_ca:
+          #          cert: "/etc/haproxy/ls-ca.crt"
+      - role: local-ca
+        local_ca_caname: prometheus
+        local_ca_server:
+          pem:
+            cert: "/etc/haproxy/pm-sv.crt"
+            key: "/etc/haproxy/pm-sv.key"
+          cn: "{{ ansible_nodename }}-server"
+        local_ca_ca:
+          cert: "/etc/haproxy/pm-ca.crt"
+          crl: "/etc/haproxy/pm-crl.pem"
+
+  - hosts: mon-client
+    roles:
+      - { role: monitoring-client, tags: monitoring-client }
+
+        #  - hosts: mon-proxy
+        #    roles:
+        #      - { role: monitoring-proxy, tags: monitoring-proxy }

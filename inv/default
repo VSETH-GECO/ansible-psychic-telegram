@@ -36,6 +36,12 @@ ansible_ssh_user=root
 [proxmox:vars]
 ansible_ssh_user=root
 
+[mon-server]
+monitoring.lan.geco.ethz.ch
+
+[mon-client:children]
+proxmox
+
 [ca]
 geco-cx.vseth.ethz.ch ansible_ssh_user=geco
 

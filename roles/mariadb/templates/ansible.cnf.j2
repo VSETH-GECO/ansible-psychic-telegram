@@ -1,0 +1,8 @@
+# This file is managed by ansible (role mariadb), do not edit!
+[mysqld]
+{% if mariadb_local_only %}
+bind-address = 127.0.0.1
+{% endif %}
+innodb_large_prefix = 1
+innodb_file_format = barracuda
+innodb_file_per_table = true

@@ -16,6 +16,5 @@ xdg_env:
 
 config_repo_path: "cfg"
 
-lca_is_local: False
-lca_hostname: gitea.njsm.de
-lca_basepath: /home/geco/.cas
+local_ca_workhost: geco-cx.vseth.ethz.ch
+local_ca_basepath: /home/geco/.cas

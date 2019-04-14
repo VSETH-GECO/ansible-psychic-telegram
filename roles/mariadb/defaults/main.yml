@@ -1,0 +1,9 @@
+---
+# Don't accept remote connections
+mariadb_local_only: True
+# You'll need to set this:
+mariadb_root_password: None
+mariadb_databases: []
+#  - name: maildb
+#    user: maildb
+#    password: foobar
