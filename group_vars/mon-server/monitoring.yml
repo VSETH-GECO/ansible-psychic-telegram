@@ -11,3 +11,13 @@ grafana_session_provider_options: "grafana:{{ grafana_mariadb_password }}@tcp(12
 grafana_analytics: False
 
 apt_with_backports: True
+nginx_enable_proxy: True
+nginx_proxy_subnet: 10.10.200.2/24
+nginx_canonicalize_https: True
+mon_icingaweb_dbauth: True
+mon_icingaweb_ldap: False
+
+mon_icingaweb_ldap_roles:
+  - name: admin
+    users: admin
+    permissions: "*"
