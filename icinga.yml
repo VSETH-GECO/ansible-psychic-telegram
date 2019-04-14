@@ -87,7 +87,7 @@
       - { role: monitoring-server, tags: icinga }
         #- { role: letsencrypt, tags: letsencrypt }
         #- { role: postfix_relay, tags: postfix_relay }
-        #- { role: grafana, tags: grafana }
+      - { role: grafana, tags: grafana }
         #- { role: elasticsearch, tags: elasticsearch }
         #- { role: logstash-client, tags: logstash-client }
         #- { role: kibana, tags: kibana }
