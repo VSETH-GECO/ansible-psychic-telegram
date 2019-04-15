@@ -37,6 +37,9 @@
 [submodule "roles/dhcp"]
 	path = roles/dhcp
 	url = git@github.com:VSETH-GECO/dhcp.git
+[submodule "roles/polynet"]
+	path = roles/polynet
+	url = git@github.com:VSETH-GECO/polynet.git
 [submodule "roles/nginx"]
 	path = roles/nginx
 	url = https://github.com/SOSETH/nginx.git

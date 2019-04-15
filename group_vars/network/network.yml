@@ -1,0 +1,56 @@
+dhcp0: 10.233.253.3
+dhcp1: 10.233.253.4
+
+
+vlans:
+  core: 
+    description: core
+    subnet: 10.233.254.0 255.255.255.0
+    number: 1254
+  server:
+    description: server
+    number: 1253
+    core_ip: 10.233.254.253
+    ip: 10.233.253.1
+    subnet: 10.233.253.0 255.255.255.0
+    dhcp:
+      ip: 10.233.253.0
+      router: 10.233.253.1
+      range: 10.233.253.100 10.233.253.110
+  user1:
+    description: user1
+    number: 501
+    core_ip: 10.233.254.1
+    ip: 10.233.1.1
+    subnet: 10.233.1.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    dhcp:
+      ip: 10.233.1.0
+      router: 10.233.1.1
+      range: 10.233.1.10 10.233.1.200
+  user2:
+    description: user2
+    number: 502
+    core_ip: 10.233.254.2
+    ip: 10.233.2.1
+    subnet: 10.233.2.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    dhcp:
+      ip: 10.233.2.0
+      router: 10.233.2.1
+      range: 10.233.2.10 10.233.2.20
+  user3:
+    description: user3
+    number: 503
+    core_ip: 10.233.254.3
+    ip: 10.233.3.1
+    subnet: 10.233.3.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    dhcp:
+      ip: 10.233.3.0
+      router: 10.233.3.1
+      range: 10.233.3.10 10.233.3.20
+
+
+
+

@@ -1,0 +1,15 @@
+---
+  - hosts: access
+    connection: local
+    gather_facts: False
+    vars_files:
+      - "net_secret.yml"
+    roles:
+      - name: polynet/base
+        tags: polynet/base
+      - name: polynet/access
+        tags: polynet/access
+
+   
+
+
