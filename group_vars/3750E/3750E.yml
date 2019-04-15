@@ -1,0 +1,4 @@
+access_range: ["range Gi1/0/1-44"]
+trunk_range: ["range Ten1/0/1-2", "range Gi1/0/45-48"]
+
+

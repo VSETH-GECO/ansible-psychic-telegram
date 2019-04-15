@@ -32,3 +32,45 @@ geco-cx.vseth.ethz.ch ansible_ssh_user=geco
 dhcp0.lan.geco.ethz.ch
 dhcp1.lan.geco.ethz.ch
 
+[network:children]
+3750E
+dhcp
+
+
+[core]
+
+[access:children]
+user1
+user2
+user3
+server
+
+#FDO13370KF5
+#FDO13370KAH
+
+[server]
+FDO15160LDZ
+[server:vars]
+access_vlan={{ vlans['server'] }}
+
+[user1]
+FDO144106JM
+[user1:vars]
+access_vlan={{ vlans['user1'] }}
+
+[user2]
+FDO13370KF5
+[user2:vars]
+access_vlan={{ vlans['user2'] }}
+
+[user3]
+FDO13370KAH
+[user3:vars]
+access_vlan={{ vlans['user3'] }}
+
+[3750E]
+FDO13370KF5  ansible_host=10.10.1.101
+FDO13370KAH  ansible_host=10.10.1.102
+FDO13370K8G  ansible_host=10.10.1.105
+FDO144106JM  ansible_host=10.10.1.106
+FDO15160LDZ  ansible_host=10.10.1.1
