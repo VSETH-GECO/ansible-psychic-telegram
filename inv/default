@@ -14,6 +14,7 @@ hex1.lan.geco.ethz.ch
 
 [vms]
 monitoring.lan.geco.ethz.ch
+librenms.lan.geco.ethz.ch
 dhcp0.lan.geco.ethz.ch
 dhcp1.lan.geco.ethz.ch
 cachedns.lan.geco.ethz.ch
@@ -48,6 +49,10 @@ geco-cx.vseth.ethz.ch ansible_ssh_user=geco
 [dhcp]
 dhcp0.lan.geco.ethz.ch
 dhcp1.lan.geco.ethz.ch
+
+
+[docker]
+librenms.lan.geco.ethz.ch
 
 [network:children]
 3750E

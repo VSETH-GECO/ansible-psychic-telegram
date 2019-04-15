@@ -32,3 +32,10 @@
     roles:
       - name: dhcp
         tags: dhcp
+
+  # Setup docer server
+  - hosts: docker
+    gather_facts: True
+    roles:
+      - name: docker
+        tags: docker

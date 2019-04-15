@@ -46,3 +46,6 @@
 [submodule "roles/letsencrypt"]
 	path = roles/letsencrypt
 	url = https://github.com/SOSETH/letsencrypt.git
+[submodule "roles/docker"]
+	path = roles/docker
+	url = git@github.com:VSETH-GECO/docker.git
