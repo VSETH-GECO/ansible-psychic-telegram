@@ -4,6 +4,7 @@ mon_syslog_servers:
 mon_icinga_base_url: "https://monitoring.lan.geco.ethz.ch"
 mon_icinga_master_fqdn: monitoring.lan.geco.ethz.ch
 mon_icinga_mail_domain: geco.ethz.ch
+mon_enable_syslog_forwarding: False
 
 mon_prometheus_job_relabling:
   - source_labels: [job]

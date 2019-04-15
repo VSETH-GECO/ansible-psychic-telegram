@@ -1,0 +1,8 @@
+mon_icinga_procs_warn: 2000
+mon_icinga_procs_crit: 2200
+mon_icinga_load_wload1: 28
+mon_icinga_load_wload5: 24
+mon_icinga_load_wload15: 20
+mon_icinga_load_cload1: 30
+mon_icinga_load_cload5: 26
+mon_icinga_load_cload15: 24

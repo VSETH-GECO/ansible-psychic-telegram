@@ -7,3 +7,9 @@ ssh_strict_client: True
 sshd_use_dns: "no"
 sshd_restrict_users: False
 sshd_replace_moduli: True
+
+ssh_authorized_keys:
+  - maxf-card
+  - dave
+  - felunka
+  - fischi

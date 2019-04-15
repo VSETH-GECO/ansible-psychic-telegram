@@ -1,0 +1,93 @@
+---
+  # Playbook for monitoring "servers"
+
+  # Ensure cert traget directory exists
+  - hosts: mon-server
+    tasks:
+      - name: Create nginx certificate directory
+        file: dest=/etc/nginx state=directory
+        #- name: Create elasticsearch certificate directory
+        #  file: dest=/etc/elasticsearch state=directory
+      - name: Create haproxy certificate directory  # MARK!
+        file: dest=/etc/haproxy state=directory
+
+  - hosts: mon-server
+    roles:
+      - role: local-ca
+        local_ca_caname: icinga
+        local_ca_group: nagios
+        local_ca_both:
+          pem:
+            cert: "/var/lib/icinga2/certs/{{ ansible_fqdn }}.crt"
+            key: "/var/lib/icinga2/certs/{{ ansible_fqdn }}.key"
+          cn: "{{ ansible_fqdn }}"
+          san: "DNS:{{ ansible_nodename }},DNS:{{ ansible_fqdn }},IP:{{ansible_all_ipv4_addresses|join(',IP:')}},IP:127.0.0.1"
+        local_ca_ca:
+          cert: "/var/lib/icinga2/certs/ca.crt"
+          #      - role: local-ca
+          #        local_ca_caname: elasticsearch
+          #        local_ca_client:
+          #          pem:
+          #            cert: /etc/elasticsearch/client.pem
+          #            key: /etc/elasticsearch/client.key
+          #          cn: "{{ ansible_fqdn }}-client"
+          #        local_ca_ca:
+          #          cert: /etc/elasticsearch/ca.pem
+          #          crl: /etc/elasticsearch/crl.pem
+          #        local_ca_server:
+          #          pem:
+          #            cert: /etc/elasticsearch/server.pem
+          #            key: /etc/elasticsearch/server.key
+          #          cn: "{{ ansible_fqdn}}-server"
+          #          san: "DNS:{{ ansible_nodename }},DNS:{{ ansible_fqdn }},IP:{{ansible_all_ipv4_addresses|join(',IP:')}},IP:127.0.0.1"
+          #      - role: local-ca
+          #        local_ca_caname: logstash
+          #        local_ca_server:
+          #          pem:
+          #            cert: /etc/haproxy/ls-srv-ls.crt
+          #            key: /etc/haproxy/ls-srv-ls.key
+          #          cn: "{{ ansible_nodename }}-server"
+          #          san: "DNS:{{ ansible_nodename }},IP:{{ansible_all_ipv4_addresses|join(',IP:')}},IP:127.0.0.1"
+          #        local_ca_ca:
+          #          cert: /etc/haproxy/ls-ca.crt
+          #          crl: /etc/haproxy/ls-crl.pem
+          #        local_ca_client:
+          #          pem:
+          #            cert: /etc/haproxy/ls-cl.crt
+          #            key: /etc/haproxy/ls-cl.key
+          #          cn: "{{ ansible_nodename }}-client"
+      - role: local-ca
+        local_ca_caname: prometheus
+        local_ca_client:
+          pem:
+            cert: /etc/haproxy/pm-cl.crt
+            key: /etc/haproxy/pm-cl.key
+          cn: "{{ ansible_nodename }}-client"
+        local_ca_ca:
+          cert: /etc/haproxy/pm-ca.crt
+          crl: "/etc/haproxy/pm-crl.pem"
+        local_ca_server:
+          pem:
+            cert: /etc/haproxy/pm-sv.crt
+            key: /etc/haproxy/pm-sv.key
+          cn: "{{ ansible_nodename }}-server"
+
+  # Load list of checks from each client
+  - hosts: mon-client
+    gather_facts: True
+    tags: icconf, icinga
+
+  - hosts: mon-server
+    gather_facts: True
+    tags: icconf, icinga
+
+  - hosts: mon-server
+    roles:
+      - { role: haproxy, tags: haproxy }
+      - { role: monitoring-server, tags: icinga }
+        #- { role: letsencrypt, tags: letsencrypt }
+        #- { role: postfix_relay, tags: postfix_relay }
+      - { role: grafana, tags: grafana }
+        #- { role: elasticsearch, tags: elasticsearch }
+        #- { role: logstash-client, tags: logstash-client }
+        #- { role: kibana, tags: kibana }

@@ -40,3 +40,9 @@
 [submodule "roles/polynet"]
 	path = roles/polynet
 	url = git@github.com:VSETH-GECO/polynet.git
+[submodule "roles/nginx"]
+	path = roles/nginx
+	url = https://github.com/SOSETH/nginx.git
+[submodule "roles/letsencrypt"]
+	path = roles/letsencrypt
+	url = https://github.com/SOSETH/letsencrypt.git
