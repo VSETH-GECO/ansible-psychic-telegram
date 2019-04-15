@@ -57,9 +57,10 @@ dhcp
 [core]
 
 [access:children]
-user1
+#user1
 user2
 user3
+user4
 server
 
 #FDO13370KF5
@@ -85,9 +86,17 @@ FDO13370KAH
 [user3:vars]
 access_vlan={{ vlans['user3'] }}
 
+[user4]
+FDO14460ELY
+[user4:vars]
+access_vlan={{ vlans['user4'] }}
+
+
+
 [3750E]
 FDO13370KF5  ansible_host=10.10.1.101
 FDO13370KAH  ansible_host=10.10.1.102
+FDO14460ELY  ansible_host=10.10.1.103
 FDO13370K8G  ansible_host=10.10.1.105
 FDO144106JM  ansible_host=10.10.1.106
 FDO15160LDZ  ansible_host=10.10.1.1

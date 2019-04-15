@@ -38,7 +38,7 @@ vlans:
     dhcp:
       ip: 10.233.2.0
       router: 10.233.2.1
-      range: 10.233.2.10 10.233.2.20
+      range: 10.233.2.10 10.233.2.200
   user3:
     description: user3
     number: 503
@@ -49,7 +49,19 @@ vlans:
     dhcp:
       ip: 10.233.3.0
       router: 10.233.3.1
-      range: 10.233.3.10 10.233.3.20
+      range: 10.233.3.10 10.233.3.200
+  user4:
+    description: user4
+    number: 504
+    core_ip: 10.233.254.4
+    ip: 10.233.4.1
+    subnet: 10.233.4.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    dhcp:
+      ip: 10.233.4.0
+      router: 10.233.4.1
+      range: 10.233.4.10 10.233.4.200
+
 
 
 
