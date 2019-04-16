@@ -1,6 +1,12 @@
 dhcp0: 10.233.253.3
 dhcp1: 10.233.253.4
 
+global_vlans: "vlan 1,500-2000"
+
+wan_vlan: 
+    description: WAN
+    subnet: 10.233.200.0 255.255.255.0
+    number: 199
 
 vlans:
   core: 
@@ -46,6 +52,8 @@ vlans:
     ip: 10.233.3.1
     subnet: 10.233.3.0 255.255.255.0
     local_deny_ssh_outbound: true
+    border_switch: true
+    wan_ip: 10.233.200.103
     dhcp:
       ip: 10.233.3.0
       router: 10.233.3.1
