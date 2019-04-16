@@ -65,6 +65,8 @@ vlans:
     ip: 10.233.4.1
     subnet: 10.233.4.0 255.255.255.0
     local_deny_ssh_outbound: true
+    border_switch: true
+    wan_ip: 10.233.200.103
     dhcp:
       ip: 10.233.4.0
       router: 10.233.4.1
