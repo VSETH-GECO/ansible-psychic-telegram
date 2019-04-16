@@ -85,7 +85,8 @@
     roles:
       - { role: haproxy, tags: haproxy }
       - { role: monitoring-server, tags: icinga }
-        #- { role: letsencrypt, tags: letsencrypt }
+      - { role: nginx, tags: nginx }
+      - { role: letsencrypt, tags: letsencrypt }
         #- { role: postfix_relay, tags: postfix_relay }
       - { role: grafana, tags: grafana }
         #- { role: elasticsearch, tags: elasticsearch }

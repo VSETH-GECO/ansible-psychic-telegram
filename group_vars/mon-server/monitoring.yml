@@ -21,3 +21,5 @@ mon_icingaweb_ldap_roles:
   - name: admin
     users: admin
     permissions: "*"
+
+letsencrypt_staging: False
