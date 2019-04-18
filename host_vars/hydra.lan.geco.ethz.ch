@@ -8,3 +8,5 @@ netconf:
       gateway: 10.233.253.1
       dns: 10.233.200.2 10.233.200.1
       dnssearch: lan.geco.ethz.ch
+    vmbr1:
+      parent: rename4
