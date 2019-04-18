@@ -1,4 +1,6 @@
-access_range: ["range Gi1/0/1-44"]
-trunk_range: ["range Ten1/0/1-2", "range Gi1/0/45-48"]
+access_range: ["range Gi1/0/1-42"]
+misc_range: ["range Gi1/0/43-44"]
+misc_po_range: ["range Gi1/0/45-46"]
+trunk_range: ["range Gi1/0/47-48", "range Ten1/0/1-2"]
 
 
