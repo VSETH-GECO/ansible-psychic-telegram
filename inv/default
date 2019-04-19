@@ -30,6 +30,7 @@ csmatch4.lan.geco.ethz.ch
 csmatch3.lan.geco.ethz.ch
 csmatch2.lan.geco.ethz.ch
 csmatch1.lan.geco.ethz.ch
+openttd.lan.geco.ethz.ch
 
 [vms:vars]
 ansible_ssh_user=root
