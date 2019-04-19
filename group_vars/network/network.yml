@@ -93,7 +93,7 @@ vlans:
     ip: 10.233.6.1
     subnet: 10.233.6.0 255.255.255.0
     local_deny_ssh_outbound: true
-    border_switch: false
+    border_switch: true
     wan_ip: 10.233.200.106
     dhcp:
       ip: 10.233.6.0
@@ -119,7 +119,7 @@ vlans:
     ip: 10.233.8.1
     subnet: 10.233.8.0 255.255.255.0
     local_deny_ssh_outbound: true
-    border_switch: false
+    border_switch: true
     wan_ip: 10.233.200.108
     dhcp:
       ip: 10.233.8.0
@@ -164,6 +164,108 @@ vlans:
       ip: 10.233.11.0
       router: 10.233.11.1
       range: 10.233.11.10 10.233.11.200
+
+  user12:
+    description: user12
+    number: 512
+    core_ip: 10.233.254.12
+    ip: 10.233.12.1
+    subnet: 10.233.12.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    border_switch: true
+    wan_ip: 10.233.200.112
+    dhcp:
+      ip: 10.233.12.0
+      router: 10.233.12.1
+      range: 10.233.12.10 10.233.12.200
+
+  user13:
+    description: user13
+    number: 513
+    core_ip: 10.233.254.13
+    ip: 10.233.13.1
+    subnet: 10.233.13.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    border_switch: false
+    wan_ip: 10.233.200.113
+    dhcp:
+      ip: 10.233.13.0
+      router: 10.233.13.1
+      range: 10.233.13.10 10.233.13.200
+
+  user21:
+    description: user21
+    number: 521
+    core_ip: 10.233.254.21
+    ip: 10.233.21.1
+    subnet: 10.233.21.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    border_switch: false
+    wan_ip: 10.233.200.121
+    dhcp:
+      ip: 10.233.21.0
+      router: 10.233.21.1
+      range: 10.233.21.10 10.233.21.200
+
+  user23:
+    description: user23
+    number: 523
+    core_ip: 10.233.254.23
+    ip: 10.233.23.1
+    subnet: 10.233.23.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    border_switch: false
+    wan_ip: 10.233.200.123
+    dhcp:
+      ip: 10.233.23.0
+      router: 10.233.23.1
+      range: 10.233.23.10 10.233.23.200
+  user25:
+    description: user25
+    number: 525
+    core_ip: 10.233.254.25
+    ip: 10.233.25.1
+    subnet: 10.233.25.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    border_switch: false
+    wan_ip: 10.233.200.125
+    dhcp:
+      ip: 10.233.25.0
+      router: 10.233.25.1
+      range: 10.233.25.10 10.233.25.200
+
+
+
+
+  streaming:
+    description: streaming
+    number: 530
+    core_ip: 10.233.254.30
+    ip: 10.233.30.1
+    subnet: 10.233.30.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    border_switch: false
+    wan_ip: 10.233.200.130
+    dhcp:
+      ip: 10.233.30.0
+      router: 10.233.30.1
+      range: 10.233.30.10 10.233.30.200
+
+  admin:
+    description: admin
+    number: 531
+    core_ip: 10.233.254.31
+    ip: 10.233.31.1
+    subnet: 10.233.31.0 255.255.255.0
+    local_deny_ssh_outbound: true
+    border_switch: false
+    wan_ip: 10.233.200.131
+    dhcp:
+      ip: 10.233.31.0
+      router: 10.233.31.1
+      range: 10.233.31.10 10.233.31.200
+
+
 
 
 

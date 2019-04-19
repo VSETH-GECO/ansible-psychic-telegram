@@ -57,6 +57,7 @@ core
 
 [core]
 FOC19210DQZ
+FOC19240VXP
 
 [access:children]
 user1
@@ -69,8 +70,15 @@ user7
 user8
 user9
 user10
-user11
+#user11
+user12
+user13
+user21
+user23
+user25
 server
+streaming
+#admin
 
 #FDO13370KF5
 #FDO13370KAH
@@ -135,7 +143,46 @@ FDO13330XHX
 [user11:vars]
 access_vlan={{ vlans['user11'] }}
 
+[user12]
+FDO135100AC
+[user12:vars]
+access_vlan={{ vlans['user12'] }}
 
+[user13]
+FDO14190YKB
+[user13:vars]
+access_vlan={{ vlans['user13'] }}
+
+[user21]
+FDO13330XFW
+[user21:vars]
+access_vlan={{ vlans['user21'] }}
+
+[user23]
+FDO14020V5A
+[user23:vars]
+access_vlan={{ vlans['user23'] }}
+
+[user25]
+FDO14470CGS
+[user25:vars]
+access_vlan={{ vlans['user25'] }}
+
+
+
+
+
+
+
+[streaming]
+FDO12390BE8
+[streaming:vars]
+access_vlan={{ vlans['streaming'] }}
+
+[admin]
+FDO14190YKX
+[admin:vars]
+access_vlan={{ vlans['admin'] }}
 
 
 
@@ -157,9 +204,22 @@ FDO133808ZZ  ansible_host=10.233.252.8
 FDO133808A5  ansible_host=10.233.252.9
 FDO13370K8G  ansible_host=10.233.252.10
 FDO13330XHX  ansible_host=10.233.252.11
+FDO135100AC  ansible_host=10.233.252.12
+FDO14190YKB  ansible_host=10.233.252.13
+FDO13330XFW  ansible_host=10.233.252.21
+FDO14190YKX  ansible_host=10.233.252.22
+FDO14020V5A  ansible_host=10.233.252.23
+FDO14470CGS  ansible_host=10.233.252.25
+
+
+
+FDO12390BE8 ansible_host=10.233.252.30
+
 
 
 [3850XS]
 FOC19210DQZ ansible_host=10.233.252.100
+FOC19240VXP ansible_host=10.233.252.101
+
 
 
