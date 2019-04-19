@@ -55,7 +55,6 @@ dhcp1.lan.geco.ethz.ch
 dhcp
 core
 
-
 [core]
 FOC19210DQZ
 FOC19240VXP
@@ -207,7 +206,7 @@ FDO13370K8G  ansible_host=10.233.252.10
 FDO13330XHX  ansible_host=10.233.252.11
 FDO135100AC  ansible_host=10.233.252.12
 FDO14190YKB  ansible_host=10.233.252.13
-FDO13330XFW  ansible_host=10.233.252.21
+FDO13330XFW  ansible_host=10.233.252.21 #FDO1333R0GR
 FDO14190YKX  ansible_host=10.233.252.22
 FDO14020V5A  ansible_host=10.233.252.23
 FDO14470CGS  ansible_host=10.233.252.25

@@ -13,6 +13,57 @@ mon_check_swport:
 
 mon_snmp_map:
   monitoring.lan.geco.ethz.ch:
-    - name: Testswitch
+    - name: d-row1-sw1
+      ip: 10.233.254.3
+      interval: '10s'
+    - name: d-row1-sw2
       ip: 10.233.254.2
-      interval: '30s'
+      interval: '10s'
+    - name: d-row2-sw1
+      ip: 10.233.254.8
+      interval: '10s'
+    - name: d-row2-sw2
+      ip: 10.233.254.7
+      interval: '10s'
+    - name: d-row2-sw3
+      ip: 10.233.254.21
+      interval: '10s'
+    - name: d-row3-sw1
+      ip: 10.233.254.6
+      interval: '10s'
+    - name: d-row3-sw2
+      ip: 10.233.254.9
+      interval: '10s'
+    - name: d-row3-sw3
+      ip: 10.233.254.23
+      interval: '10s'
+    - name: e-bal-sw1
+      ip: 10.233.254.4
+      interval: '10s'
+    - name: e-gal-sw1
+      ip: 10.233.254.12
+      interval: '10s'
+    - name: e-adm-sw1
+      ip: 10.233.254.11
+      interval: '10s'
+    - name: e-adm-sw2
+      ip: 10.233.254.22
+      interval: '10s'
+    - name: f-bal-sw1
+      ip: 10.233.254.10
+      interval: '10s'
+    - name: f-bal-sw2
+      ip: 10.233.254.1
+      interval: '10s'
+    - name: f-gal-sw1
+      ip: 10.233.254.25
+      interval: '10s'
+    - name: g-gal-sw1
+      ip: 10.233.254.13
+      interval: '10s'
+    - name: g-stream-sw1
+      ip: 10.233.254.30
+      interval: '10s'
+    - name: g-bal-sw1
+      ip: 10.233.254.5
+      interval: '10s'
