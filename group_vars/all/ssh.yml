@@ -11,6 +11,7 @@ sshd_replace_moduli: True
 ssh_authorized_keys:
   - maxf-card
   - dave
+  - dave-desktop
   - felunka
   - fischi
   - jan  
