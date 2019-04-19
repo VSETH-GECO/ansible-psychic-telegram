@@ -13,4 +13,5 @@ dhcp:
   ip: 10.233.253.3
   peer: 10.233.253.4
   domain: lan.geco.ethz.ch
-  dns: "{{ netconf.if.ens18.dns }}"
+  dns: "10.233.200.2, 10.233.200.1"
+
