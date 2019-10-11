@@ -1,3 +1,4 @@
 install_extra: True
 pkgs_extra:
   - qemu-guest-agent
+  - acpid
