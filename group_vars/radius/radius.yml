@@ -1,0 +1,5 @@
+radius_mysql_database: 'radius'
+radius_mysql_user: 'radius'
+radius_mysql_password: '{{ vault_mariadb_ha_radius_password }}'
+radius_mysql_host: 127.44.0.1
+radius_mysql_port: 4307

@@ -49,3 +49,6 @@
 [submodule "roles/mariadb-ha"]
 	path = roles/mariadb-ha
 	url = https://github.com/SOSETH/mariadb-ha.git
+[submodule "roles/radius"]
+	path = roles/radius
+	url = https://github.com/VSETH-GECO/ansible-radius.git

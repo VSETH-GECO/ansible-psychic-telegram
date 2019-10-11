@@ -52,9 +52,24 @@
             cert: /etc/haproxy/mdb-sv.crt
             key: /etc/haproxy/mdb-sv.key
           cn: "{{ ansible_nodename }}-server"
+      - role: local-ca
+        tags: local-ca
+        local_ca_caname: radius
+        local_ca_owner: freerad
+        local_ca_ca:
+          cert: /etc/freeradius/3.0/certs/ca.pem
+        local_ca_server:
+          pem:
+            cert: /etc/freeradius/3.0/certs/server.pem
+            key: /etc/freeradius/3.0/certs/server.key
+          cn: "{{ ansible_nodename }}-server"
+          san: "DNS:{{ ansible_nodename }},DNS:{{ ansible_fqdn }},IP:{{ansible_all_ipv4_addresses|join(',IP:')}},IP:127.0.0.1"
       - name: haproxy
         tags: haproxy
       - name: mariadb-ha
         tags:
           - mariadb
           - mariadb-ha
+      - name: radius
+        tags:
+          - radius
