@@ -46,3 +46,6 @@
 [submodule "roles/letsencrypt"]
 	path = roles/letsencrypt
 	url = https://github.com/SOSETH/letsencrypt.git
+[submodule "roles/mariadb-ha"]
+	path = roles/mariadb-ha
+	url = https://github.com/SOSETH/mariadb-ha.git

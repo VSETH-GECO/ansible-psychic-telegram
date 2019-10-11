@@ -34,6 +34,9 @@ openttd.lan.geco.ethz.ch
 cspug1.lan.geco.ethz.ch
 cspug2.lan.geco.ethz.ch
 csmon.lan.geco.ethz.ch
+core01.lan.geco.ethz.ch
+core02.lan.geco.ethz.ch
+core03.lan.geco.ethz.ch
 
 [vms:vars]
 ansible_ssh_user=root
@@ -53,6 +56,11 @@ geco-cx.vseth.ethz.ch ansible_ssh_user=geco
 [dhcp]
 dhcp0.lan.geco.ethz.ch
 dhcp1.lan.geco.ethz.ch
+
+[radius]
+core01.lan.geco.ethz.ch
+core02.lan.geco.ethz.ch
+core03.lan.geco.ethz.ch
 
 [network:children]
 3750E
@@ -138,7 +146,7 @@ FDO133808A5
 access_vlan={{ vlans['user9'] }}
 
 [user10]
-FDO13370K8G 
+FDO13370K8G
 [user10:vars]
 access_vlan={{ vlans['user10'] }}
 

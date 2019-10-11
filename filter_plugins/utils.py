@@ -39,6 +39,14 @@ def key_only(arg):
 def prepend(arg, prestr):
         return [str(prestr) + str(x) for x in arg]
 
+def any_running(arg_dict, arg_hosts, arg_name):
+	found_any = False
+	for item in arg_hosts:
+		if arg_name in arg_dict[item]['services']:
+			if arg_dict[item]['services']['arg_name']['state'] == 'running':
+				found_any = True
+	return found_any
+
 class FilterModule(object):
         def filters(self):
-                return {'matching': matching, 'not_matching': not_matching, 'attr_not_matching': attr_not_matching, 'attr_in': attr_in, 'keys': key_only, 'first_sub': first_sub, 'prepend': prepend}
+                return {'matching': matching, 'not_matching': not_matching, 'attr_not_matching': attr_not_matching, 'attr_in': attr_in, 'keys': key_only, 'first_sub': first_sub, 'prepend': prepend, 'any_running': any_running}

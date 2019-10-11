@@ -32,3 +32,29 @@
     roles:
       - name: dhcp
         tags: dhcp
+
+  # Setup MariaDB Galera Cluster + Radius
+  - hosts: radius
+    roles:
+      - role: local-ca
+        tags: local-ca
+        local_ca_caname: galera
+        local_ca_client:
+          pem:
+            cert: /etc/haproxy/mdb-cl.crt
+            key: /etc/haproxy/mdb-cl.key
+          cn: "{{ ansible_nodename }}-client"
+        local_ca_ca:
+          cert: /etc/haproxy/mdb-ca.crt
+          crl: "/etc/haproxy/mdb-crl.pem"
+        local_ca_server:
+          pem:
+            cert: /etc/haproxy/mdb-sv.crt
+            key: /etc/haproxy/mdb-sv.key
+          cn: "{{ ansible_nodename }}-server"
+      - name: haproxy
+        tags: haproxy
+      - name: mariadb-ha
+        tags:
+          - mariadb
+          - mariadb-ha

@@ -1,0 +1,7 @@
+mariadb_ha_root_password: "{{ vault_mariadb_ha_root_password }}"
+mariadb_ha_dump_password: "{{ vault_mariadb_ha_dump_password }}"
+mariadb_ha_group: 'radius'
+mariadb_ha_databases:
+  - name: radius
+    user: radius
+    password: "{{ vault_mariadb_ha_radius_password }}"
