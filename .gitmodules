@@ -52,3 +52,6 @@
 [submodule "roles/radius"]
 	path = roles/radius
 	url = https://github.com/VSETH-GECO/ansible-radius.git
+[submodule "roles/kea"]
+	path = roles/kea
+	url = https://github.com/VSETH-GECO/ansible-kea.git
