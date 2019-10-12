@@ -36,10 +36,10 @@
 	url = https://github.com/SOSETH/regional.git
 [submodule "roles/dhcp"]
 	path = roles/dhcp
-	url = git@github.com:VSETH-GECO/dhcp.git
+	url = ../dhcp.git
 [submodule "roles/polynet"]
 	path = roles/polynet
-	url = git@github.com:VSETH-GECO/polynet.git
+	url = ../polynet.git
 [submodule "roles/nginx"]
 	path = roles/nginx
 	url = https://github.com/SOSETH/nginx.git
@@ -51,7 +51,7 @@
 	url = https://github.com/SOSETH/mariadb-ha.git
 [submodule "roles/radius"]
 	path = roles/radius
-	url = https://github.com/VSETH-GECO/ansible-radius.git
+	url = ../ansible-radius.git
 [submodule "roles/kea"]
 	path = roles/kea
-	url = https://github.com/VSETH-GECO/ansible-kea.git
+	url = ../ansible-kea.git
