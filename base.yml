@@ -64,6 +64,17 @@
             key: /etc/freeradius/3.0/certs/server.key
           cn: "{{ ansible_nodename }}-server"
           san: "DNS:{{ ansible_nodename }},DNS:{{ ansible_fqdn }},IP:{{ansible_all_ipv4_addresses|join(',IP:')}},IP:127.0.0.1"
+      - role: local-ca
+        tags: local-ca
+        local_ca_caname: loginpage
+        local_ca_ca:
+          cert: /etc/loginpage/certs/ca.pem
+        local_ca_server:
+          pem:
+            cert: /etc/loginpage/certs/local_login_cert.pem
+            key: /etc/loginpage/certs/local_login_key.pem
+          cn: "{{ ansible_nodename }}-server"
+          san: "DNS:{{ ansible_nodename }},DNS:{{ ansible_fqdn }},IP:{{ansible_all_ipv4_addresses|join(',IP:')}},IP:127.0.0.1"
       - name: haproxy
         tags: haproxy
       - name: mariadb-ha
@@ -76,6 +87,12 @@
       - name: bouncer
         tags:
           - bouncer
+      - name: docker
+        tags:
+          - docker
+      - name: loginpage
+        tags:
+          - loginpage
 
   - hosts: dhcp_kea
     roles:

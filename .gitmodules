@@ -58,3 +58,9 @@
 [submodule "roles/bouncer"]
 	path = roles/bouncer
 	url = ../ansible-bouncer.git
+[submodule "roles/docker"]
+	path = roles/docker
+	url = https://github.com/SOSETH/docker.git
+[submodule "roles/loginpage"]
+	path = roles/loginpage
+	url = ../ansible-loginpage.git

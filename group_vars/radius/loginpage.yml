@@ -1,0 +1,1 @@
+loginpage_secret_key_base: '{{ vault_loginpage_secret_key_base }}'
