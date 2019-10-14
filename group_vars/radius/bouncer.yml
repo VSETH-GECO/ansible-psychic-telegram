@@ -1,0 +1,6 @@
+bouncer_database: 'radius'
+bouncer_user: 'radius'
+bouncer_password: '{{ vault_mariadb_ha_radius_password }}'
+bouncer_host: '127.44.0.1'
+bouncer_port: '4307'
+bouncer_switch_secret: "{{ vault_radius_switch_secret }}"

@@ -73,6 +73,10 @@
       - name: radius
         tags:
           - radius
+      - name: bouncer
+        tags:
+          - bouncer
+
   - hosts: dhcp_kea
     roles:
       - name: kea

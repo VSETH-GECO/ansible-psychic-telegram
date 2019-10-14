@@ -55,3 +55,6 @@
 [submodule "roles/kea"]
 	path = roles/kea
 	url = ../ansible-kea.git
+[submodule "roles/bouncer"]
+	path = roles/bouncer
+	url = ../ansible-bouncer.git
