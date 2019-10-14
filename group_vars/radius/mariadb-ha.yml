@@ -5,6 +5,3 @@ mariadb_ha_databases:
   - name: radius
     user: radius
     password: "{{ vault_mariadb_ha_radius_password }}"
-  - name: kea
-    user: kea
-    password: "{{ vault_mariadb_ha_kea_password }}"

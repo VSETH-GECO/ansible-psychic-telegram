@@ -73,6 +73,8 @@
       - name: radius
         tags:
           - radius
+  - hosts: dhcp_kea
+    roles:
       - name: kea
         tags:
           - kea

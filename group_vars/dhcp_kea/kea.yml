@@ -1,0 +1,20 @@
+kea_mysql_database: 'radius'
+kea_mysql_user: 'radius'
+kea_mysql_password: '{{ vault_mariadb_ha_radius_password }}'
+kea_mysql_host: 127.44.0.1
+kea_mysql_port: 4307
+
+kea_ha_group: 'dhcp_kea'
+
+kea_options:
+  - name: domain-name-servers
+    data: "10.233.200.1, 10.233.200.2"
+
+kea_pools:
+  # Servers
+  - subnet: 10.233.253.0/24
+    pools:
+      - pool: "10.233.253.142 - 10.233.253.145"
+    option-data:
+      - name: routers
+        data: "10.233.253.1"

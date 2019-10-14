@@ -3,3 +3,11 @@ radius_mysql_user: 'radius'
 radius_mysql_password: '{{ vault_mariadb_ha_radius_password }}'
 radius_mysql_host: 127.44.0.1
 radius_mysql_port: 4307
+
+radius_static_clients:
+  - name: switches
+    secret: "{{ vault_radius_switch_secret }}"
+    subnet: 10.233.254.0/24
+  - name: admin-switch
+    secret: "{{ vault_radius_switch_secret }}"
+    subnet: 10.233.253.1/32

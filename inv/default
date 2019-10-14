@@ -62,6 +62,10 @@ core01.lan.geco.ethz.ch
 core02.lan.geco.ethz.ch
 core03.lan.geco.ethz.ch
 
+[dhcp_kea]
+core01.lan.geco.ethz.ch
+core02.lan.geco.ethz.ch
+
 [network:children]
 3750E
 dhcp
