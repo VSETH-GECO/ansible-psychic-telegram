@@ -1,15 +1,17 @@
-dhcp0: 10.233.253.3
-dhcp1: 10.233.253.4
+# Careful! The DHCP subnet config in this file is not applied anymore
+
+dhcp0: 10.233.253.70
+dhcp1: 10.233.253.71
 
 global_vlans: "vlan 1,500-2000"
 
-wan_vlan: 
+wan_vlan:
     description: WAN
     subnet: 10.233.200.0 255.255.255.0
     number: 199
 
 vlans:
-  core: 
+  core:
     description: core
     subnet: 10.233.254.0 255.255.255.0
     number: 1254
