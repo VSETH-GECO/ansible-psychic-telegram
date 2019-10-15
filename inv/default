@@ -74,6 +74,7 @@ core02.lan.geco.ethz.ch
 [network:children]
 3750E
 #dhcp
+radius
 core
 
 [core]

@@ -1,0 +1,14 @@
+polynet_base_enable_radius: True
+polynet_base_radius_servers:
+  - 10.233.253.70
+  - 10.233.253.71
+  - 10.233.253.72
+polynet_base_radius_server_secret: "{{ vault_radius_switch_secret }}"
+polynet_base_enable_radius_coa: True
+polynet_base_radius_coa_clients:
+  - ip: 10.233.253.70
+    secret: "{{ vault_radius_switch_secret }}"
+  - ip: 10.233.253.71
+    secret: "{{ vault_radius_switch_secret }}"
+  - ip: 10.233.253.72
+    secret: "{{ vault_radius_switch_secret }}"

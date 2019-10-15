@@ -18,6 +18,16 @@ kea_pools:
     option-data:
       - name: routers
         data: "10.233.253.1"
+  # Captive portal
+  - subnet: 10.233.240.0/21
+    pools:
+      - pool: "10.233.240.20 - 10.233.247.253"
+    option-data:
+      - name: routers
+        data: "10.233.240.1"
+    relay:
+      ip-addresses:
+        - 10.233.254.253
   # User switches
   - subnet: 10.233.1.0/24
     pools:

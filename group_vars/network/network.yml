@@ -25,6 +25,12 @@ vlans:
       ip: 10.233.253.0
       router: 10.233.253.1
       range: 10.233.253.100 10.233.253.110
+  portal:
+    description: Captive portal
+    number: 1252
+    core_ip: 10.233.254.253
+    ip: 10.233.240.1
+    subnet: 10.233.240.0 255.255.248.0
   user1:
     description: user1
     number: 501
