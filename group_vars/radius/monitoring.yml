@@ -1,0 +1,4 @@
+mon_prometheus_extra_exportes:
+  - name: bouncer
+    port: 2112
+    publicport: 2113

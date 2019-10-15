@@ -14,8 +14,8 @@ hex1.lan.geco.ethz.ch
 
 [vms]
 monitoring.lan.geco.ethz.ch
-dhcp0.lan.geco.ethz.ch
-dhcp1.lan.geco.ethz.ch
+#dhcp0.lan.geco.ethz.ch
+#dhcp1.lan.geco.ethz.ch
 cachedns.lan.geco.ethz.ch
 files.lan.geco.ethz.ch
 minecraft.lan.geco.ethz.ch
@@ -24,7 +24,7 @@ ebot.lan.geco.ethz.ch
 login.lan.geco.ethz.ch
 ts1.lan.geco.ethz.ch
 ts2.lan.geco.ethz.ch
-steamcache.lan.geco.ethz.ch
+#steamcache.lan.geco.ethz.ch
 csfun1.lan.geco.ethz.ch
 csmatch4.lan.geco.ethz.ch
 csmatch3.lan.geco.ethz.ch
@@ -44,18 +44,18 @@ ansible_ssh_user=root
 [proxmox:vars]
 ansible_ssh_user=root
 
-[mon-server]
+[mon_server]
 monitoring.lan.geco.ethz.ch
 
-[mon-client:children]
+[mon_client:children]
 proxmox
 
 [ca]
 geco-cx.vseth.ethz.ch ansible_ssh_user=geco
 
-[dhcp]
-dhcp0.lan.geco.ethz.ch
-dhcp1.lan.geco.ethz.ch
+#[dhcp]
+#dhcp0.lan.geco.ethz.ch
+#dhcp1.lan.geco.ethz.ch
 
 [radius]
 core01.lan.geco.ethz.ch
@@ -68,7 +68,7 @@ core02.lan.geco.ethz.ch
 
 [network:children]
 3750E
-dhcp
+#dhcp
 core
 
 [core]
