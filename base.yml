@@ -68,7 +68,7 @@
         tags: local-ca
         local_ca_caname: loginpage
         local_ca_ca:
-          cert: /etc/loginpage/certs/ca.pem
+          cert: /etc/loginpage/certs/local_login_ca.pem
         local_ca_server:
           pem:
             cert: /etc/loginpage/certs/local_login_cert.pem

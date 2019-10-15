@@ -50,6 +50,8 @@
           cn: "{{ ansible_fqdn }}"
         local_ca_ca:
           cert: "/var/lib/icinga2/certs/ca.crt"
+        tags:
+          - local-ca
       - role: local-ca
         local_ca_caname: prometheus
         local_ca_server:
@@ -60,6 +62,8 @@
         local_ca_ca:
           cert: "/etc/haproxy/pm-ca.crt"
           crl: "/etc/haproxy/pm-crl.pem"
+        tags:
+          - local-ca
 
   - hosts: mon_client
     roles:
