@@ -50,6 +50,11 @@ monitoring.lan.geco.ethz.ch
 [mon_client:children]
 proxmox
 
+[mon_client]
+core01.lan.geco.ethz.ch
+core02.lan.geco.ethz.ch
+core03.lan.geco.ethz.ch
+
 [ca]
 geco-cx.vseth.ethz.ch ansible_ssh_user=geco
 

@@ -17,9 +17,9 @@ nginx_canonicalize_https: True
 mon_icingaweb_dbauth: True
 mon_icingaweb_ldap: False
 
-mon_icingaweb_ldap_roles:
-  - name: admin
-    users: admin
-    permissions: "*"
+#mon_icingaweb_ldap_roles:
+#  - name: admin
+#    users: admin
+#    permissions: "*"
 
 letsencrypt_staging: False
