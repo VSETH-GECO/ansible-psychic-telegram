@@ -82,23 +82,23 @@ FOC19210DQZ
 FOC19240VXP
 
 [access:children]
-user1
-user2
+#user1
+#user2
 user3
-user4
+#user4
 user5
 user6
 user7
 user8
-user9
+#user9
 user10
 #user11
-user12
-user13
-user21
-user23
+#user12
+#user13
+#user21
+#user23
 user25
-server
+#§server
 streaming
 #admin
 
