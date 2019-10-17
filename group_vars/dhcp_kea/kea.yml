@@ -65,6 +65,9 @@ kea_pools:
     option-data:
       - name: routers
         data: "10.233.6.1"
+    relay:
+      ip-addresses:
+        - 10.233.6.1
   - subnet: 10.233.7.0/24
     pools:
     - pool: "10.233.7.10 - 10.233.7.200"
