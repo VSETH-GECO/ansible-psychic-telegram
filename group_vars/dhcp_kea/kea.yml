@@ -35,30 +35,45 @@ kea_pools:
     option-data:
       - name: routers
         data: "10.233.1.1"
+    relay:
+      ip-addresses:
+        - 10.233.1.1
   - subnet: 10.233.2.0/24
     pools:
     - pool: "10.233.2.10 - 10.233.2.200"
     option-data:
       - name: routers
         data: "10.233.2.1"
+    relay:
+      ip-addresses:
+        - 10.233.2.1
   - subnet: 10.233.3.0/24
     pools:
     - pool: "10.233.3.10 - 10.233.3.200"
     option-data:
       - name: routers
         data: "10.233.3.1"
+    relay:
+      ip-addresses:
+        - 10.233.3.1
   - subnet: 10.233.4.0/24
     pools:
     - pool: "10.233.4.10 - 10.233.4.200"
     option-data:
       - name: routers
         data: "10.233.4.1"
+    relay:
+      ip-addresses:
+        - 10.233.4.1
   - subnet: 10.233.5.0/24
     pools:
     - pool: "10.233.5.10 - 10.233.5.200"
     option-data:
       - name: routers
         data: "10.233.5.1"
+    relay:
+      ip-addresses:
+        - 10.233.5.1
   - subnet: 10.233.6.0/24
     pools:
     - pool: "10.233.6.10 - 10.233.6.200"
@@ -74,114 +89,171 @@ kea_pools:
     option-data:
       - name: routers
         data: "10.233.7.1"
+    relay:
+      ip-addresses:
+        - 10.233.7.1
   - subnet: 10.233.8.0/24
     pools:
     - pool: "10.233.8.10 - 10.233.8.200"
     option-data:
       - name: routers
         data: "10.233.8.1"
+    relay:
+      ip-addresses:
+        - 10.233.8.1
   - subnet: 10.233.9.0/24
     pools:
     - pool: "10.233.9.10 - 10.233.9.200"
     option-data:
       - name: routers
         data: "10.233.9.1"
+    relay:
+      ip-addresses:
+        - 10.233.9.1
   - subnet: 10.233.10.0/24
     pools:
     - pool: "10.233.10.10 - 10.233.10.200"
     option-data:
       - name: routers
         data: "10.233.10.1"
+    relay:
+      ip-addresses:
+        - 10.233.10.1
   - subnet: 10.233.11.0/24
     pools:
     - pool: "10.233.11.10 - 10.233.11.200"
     option-data:
       - name: routers
         data: "10.233.11.1"
+    relay:
+      ip-addresses:
+        - 10.233.11.1
   - subnet: 10.233.12.0/24
     pools:
     - pool: "10.233.12.10 - 10.233.12.200"
     option-data:
       - name: routers
         data: "10.233.12.1"
+    relay:
+      ip-addresses:
+        - 10.233.12.1
   - subnet: 10.233.13.0/24
     pools:
     - pool: "10.233.13.10 - 10.233.13.200"
     option-data:
       - name: routers
         data: "10.233.13.1"
+    relay:
+      ip-addresses:
+        - 10.233.13.1
   - subnet: 10.233.14.0/24
     pools:
     - pool: "10.233.14.10 - 10.233.14.200"
     option-data:
       - name: routers
         data: "10.233.14.1"
+    relay:
+      ip-addresses:
+        - 10.233.14.1
   - subnet: 10.233.15.0/24
     pools:
     - pool: "10.233.15.10 - 10.233.15.200"
     option-data:
       - name: routers
         data: "10.233.15.1"
+    relay:
+      ip-addresses:
+        - 10.233.15.1
   - subnet: 10.233.16.0/24
     pools:
     - pool: "10.233.16.10 - 10.233.16.200"
     option-data:
       - name: routers
         data: "10.233.16.1"
+    relay:
+      ip-addresses:
+        - 10.233.16.1
   - subnet: 10.233.17.0/24
     pools:
     - pool: "10.233.17.10 - 10.233.17.200"
     option-data:
       - name: routers
         data: "10.233.17.1"
+    relay:
+      ip-addresses:
+        - 10.233.17.1
   - subnet: 10.233.18.0/24
     pools:
     - pool: "10.233.18.10 - 10.233.18.200"
     option-data:
       - name: routers
         data: "10.233.18.1"
+    relay:
+      ip-addresses:
+        - 10.233.18.1
   - subnet: 10.233.19.0/24
     pools:
     - pool: "10.233.19.10 - 10.233.19.200"
     option-data:
       - name: routers
         data: "10.233.19.1"
+    relay:
+      ip-addresses:
+        - 10.233.19.1
   - subnet: 10.233.20.0/24
     pools:
     - pool: "10.233.20.10 - 10.233.20.200"
     option-data:
       - name: routers
         data: "10.233.20.1"
+    relay:
+      ip-addresses:
+        - 10.233.20.1
   - subnet: 10.233.21.0/24
     pools:
     - pool: "10.233.21.10 - 10.233.21.200"
     option-data:
       - name: routers
         data: "10.233.21.1"
+    relay:
+      ip-addresses:
+        - 10.233.21.1
   - subnet: 10.233.22.0/24
     pools:
     - pool: "10.233.22.10 - 10.233.22.200"
     option-data:
       - name: routers
         data: "10.233.22.1"
+    relay:
+      ip-addresses:
+        - 10.233.22.1
   - subnet: 10.233.23.0/24
     pools:
     - pool: "10.233.23.10 - 10.233.23.200"
     option-data:
       - name: routers
         data: "10.233.23.1"
+    relay:
+      ip-addresses:
+        - 10.233.23.1
   - subnet: 10.233.24.0/24
     pools:
     - pool: "10.233.24.10 - 10.233.24.200"
     option-data:
       - name: routers
         data: "10.233.24.1"
+    relay:
+      ip-addresses:
+        - 10.233.24.1
   - subnet: 10.233.25.0/24
     pools:
     - pool: "10.233.25.10 - 10.233.25.200"
     option-data:
       - name: routers
         data: "10.233.25.1"
+    relay:
+      ip-addresses:
+        - 10.233.25.1
   # Streaming
   - subnet: 10.233.30.0/24
     pools:
@@ -189,6 +261,9 @@ kea_pools:
     option-data:
       - name: routers
         data: "10.233.30.1"
+    relay:
+      ip-addresses:
+        - 10.233.30.1
   # Admin
   - subnet: 10.233.31.0/24
     pools:
@@ -196,3 +271,6 @@ kea_pools:
     option-data:
       - name: routers
         data: "10.233.31.1"
+    relay:
+      ip-addresses:
+        - 10.233.31.1
