@@ -5,3 +5,7 @@ mariadb_ha_databases:
   - name: radius
     user: radius
     password: "{{ vault_mariadb_ha_radius_password }}"
+
+
+mariadb_ha_ulimit: 16536
+mariadb_ha_maxcon: 1024

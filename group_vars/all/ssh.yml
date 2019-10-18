@@ -14,4 +14,5 @@ ssh_authorized_keys:
   - dave-desktop
   - felunka
   - fischi
-  - jan  
+  - jan
+  - maxf-wsl
