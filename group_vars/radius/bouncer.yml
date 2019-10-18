@@ -4,3 +4,11 @@ bouncer_password: '{{ vault_mariadb_ha_radius_password }}'
 bouncer_host: '127.44.0.1'
 bouncer_port: '4307'
 bouncer_switch_secret: "{{ vault_radius_switch_secret }}"
+bouncer_discord_token: "{{ vault_bouncer_discord_token }}"
+bouncer_discord_users:
+  # maxf
+  - 419634540126928917
+  # Glorfischi
+  - 248478062612709376
+  # felunka
+  - 233654509522518016
