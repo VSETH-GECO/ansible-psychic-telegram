@@ -3,67 +3,35 @@ mon_enable_prometheus_snmp: True
 # Demo for Icinga snmp check
 mon_check_snmp_hosts:
   - name: "Switch Uptime"
-    ip: 10.233.254.2
+    ip: 10.233.254.253
     oid: "1.3.6.1.2.1.1.3.0"
-
-# Demo for Icinga port alert
-mon_check_swport:
-  - ip: "10.233.254.2"
-    if: "GigabitEthernet1/0/48$"
 
 mon_snmp_map:
   monitoring.lan.geco.ethz.ch:
-    - name: d-row1-sw1
-      ip: 10.233.254.3
-      interval: '10s'
-    - name: d-row1-sw2
-      ip: 10.233.254.2
-      interval: '10s'
-    - name: d-row2-sw1
-      ip: 10.233.254.8
-      interval: '10s'
-    - name: d-row2-sw2
-      ip: 10.233.254.7
-      interval: '10s'
-    - name: d-row2-sw3
-      ip: 10.233.254.21
-      interval: '10s'
-    - name: d-row3-sw1
-      ip: 10.233.254.6
-      interval: '10s'
-    - name: d-row3-sw2
-      ip: 10.233.254.9
-      interval: '10s'
-    - name: d-row3-sw3
-      ip: 10.233.254.23
-      interval: '10s'
-    - name: e-bal-sw1
-      ip: 10.233.254.4
-      interval: '10s'
-    - name: e-gal-sw1
-      ip: 10.233.254.12
-      interval: '10s'
-    - name: e-adm-sw1
-      ip: 10.233.254.11
-      interval: '10s'
-    - name: e-adm-sw2
-      ip: 10.233.254.22
-      interval: '10s'
-    - name: f-bal-sw1
-      ip: 10.233.254.10
-      interval: '10s'
-    - name: f-bal-sw2
-      ip: 10.233.254.1
-      interval: '10s'
-    - name: f-gal-sw1
+    - name: row1-switch1
       ip: 10.233.254.25
-      interval: '10s'
-    - name: g-gal-sw1
-      ip: 10.233.254.13
-      interval: '10s'
-    - name: g-stream-sw1
-      ip: 10.233.254.30
-      interval: '10s'
-    - name: g-bal-sw1
+      interval: '30s'
+    - name: row1-switch2
+      ip: 10.233.254.3
+      interval: '30s'
+    - name: row2-switch1
+      ip: 10.233.254.6
+      interval: '30s'
+    - name: row2-switch2
+      ip: 10.233.254.8
+      interval: '30s'
+    - name: row3-switch1
+      ip: 10.233.254.10
+      interval: '30s'
+    - name: row3-switch2
+      ip: 10.233.254.7
+      interval: '30s'
+    - name: row4-switch1
       ip: 10.233.254.5
-      interval: '10s'
+      interval: '30s'
+    - name: row4-switch2
+      ip: 10.233.254.30
+      interval: '30s'
+    - name: server
+      ip: 10.233.254.253
+      interval: '30s'
