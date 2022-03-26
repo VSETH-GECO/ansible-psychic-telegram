@@ -261,32 +261,6 @@ vlans:
       router: 10.233.30.1
       range: 10.233.30.10 10.233.30.200
 
-  admin:
-    description: admin
-    number: 531
-    core_ip: 10.233.254.31
-    ip: 10.233.31.1
-    subnet: 10.233.31.0 255.255.255.0
-    local_deny_ssh_outbound: true
-    border_switch: false
-    wan_ip: 10.233.200.131
-    dhcp:
-      ip: 10.233.31.0
-      router: 10.233.31.1
-      range: 10.233.31.10 10.233.31.200
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

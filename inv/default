@@ -104,6 +104,14 @@ streaming
 
 #FDO13370KF5
 #FDO13370KAH
+[access:vars]
+ansible_network_os=cisco.ios.ios
+ansible_become=yes
+ansible_become_method=enable
+ansible_user={{ vault_user }}
+ansible_password={{ vault_password }}
+ansible_become_pass={{ vault_enable }}
+
 
 [server]
 FDO15160LDZ
