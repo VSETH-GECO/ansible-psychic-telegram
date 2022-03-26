@@ -1,8 +1,14 @@
 polynet_base_enable_radius: True
 polynet_base_radius_servers:
-  - 10.233.253.70
-  - 10.233.253.71
-  - 10.233.253.72
+  - ip: 10.233.253.70
+    secret: "{{ vault_radius_switch_secret }}"
+    name: "Geco-Radius0"
+  - ip: 10.233.253.71
+    secret: "{{ vault_radius_switch_secret }}"
+    name: "Geco-Radius1"
+  - ip: 10.233.253.72
+    secret: "{{ vault_radius_switch_secret }}"
+    name: "Geco-Radius2"
 polynet_base_radius_server_secret: "{{ vault_radius_switch_secret }}"
 polynet_base_enable_radius_coa: True
 polynet_base_radius_coa_clients:

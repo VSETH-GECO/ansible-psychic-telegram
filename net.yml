@@ -9,7 +9,8 @@
 #        tags: polynet/base
 
   - hosts: access
-    connection: local
+    connection: ansible.netcommon.network_cli
+    #connection: local
     gather_facts: False
     vars_files:
       - "net_secret.yml"
